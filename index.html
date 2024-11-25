@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Management System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            background-color: #e9ecef;
+            color: #343a40;
+        }
+
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 20px;
+            background-color: #343a40;
+            color: white;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #495057;
+        }
+
+        .container {
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        form {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        input, select, button {
+            padding: 12px;
+            margin: 5px 0;
+            width: 100%;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+            box-sizing: border-box;
+            transition: border-color 0.3s;
+        }
+
+        input:focus, select:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            padding: 12px;
+            border: 1px solid #dee2e6;
+            text-align: left;
+        }
+
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        tr:hover {
+            background-color: #e2e6ea;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .action-buttons button {
+            padding: 5px 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            background-color: #28a745;
+            color: white;
+        }
+
+        .action-buttons button:hover {
+            background-color: #218838;
+        }
+
+        .error {
+            color: red;
+            margin-top: 10px;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Employee Management System</h1>
+</header>
+
+<nav>
+    <div>
+        <a href="#home">Home</a>
+        <a href="#employeeList">Employee List</a>
+    </div>
+    <div>
+        <span>Welcome, Hukum Gupta</span>
+        <a href="#logout">Logout</a>
+    </div>
+</nav>
+
+<div class="container">
+    <section id="loginPage">
+        <h2>Login Page</h2>
+        <form id="loginForm">
+            <input type="text" id="username" placeholder="User  Name" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button type="submit">Login</button>
+        </form>
+    </section>
+
+    <section id="createEmployee">
+        <h2>Create Employee</h2>
+        <form id="employeeForm">
+            <input type="text" id="name" placeholder="Name" required>
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="text" id="mobile" placeholder="Mobile No" required>
+            <select id="designation" required>
+                <option value="">Select Designation</option>
+                <option value="HR">HR</option>
+                <option value="Manager">Manager</option>
+                <option value="Sales">Sales</option>
+            </select>
+            <div>
+                <label>Gender:</label>
+                <label><input type="radio" name="gender" value="Male" required> Male</label>
+                <label><input type="radio" name="gender"value="Female"required>Female</label>
